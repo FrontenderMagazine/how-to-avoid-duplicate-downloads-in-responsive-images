@@ -147,7 +147,7 @@ I ran five tests:
 
 **I found the following support:**
 
-<span align="center">What the user sees</span>
+<span align="middle">What the user sees</span>
 
 <table>
 <tr>
