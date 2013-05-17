@@ -148,57 +148,57 @@ I ran five tests:
 **I found the following support:**
 
 <table>
-<thead>What the user sees</thead>
+<caption>What the user sees</caption>
 <tr>
-	<td></td><td>Test 1</td><td>Test 2</td><td>Test 3</td><td>Test 4</td><td>Test 5</td>
+	<th></th><th>Test 1</th><th>Test 2</th><th>Test 3</th><th>Test 4</th><th>Test 5</th>
 </tr>
 <tr>
-	<td>Android 1.6</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Android 1.6</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Android 2.3</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Android 2.3</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Android 4.2</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Android 4.2</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Chrome 25</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Chrome 25</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Chromium 25 (RICG)</td><td>picture/source image</td><td>picture/source image</td><td>picture/source image</td><td>picture/source image</td><td>picture/source image</td>
+	<th>Chromium 25 (RICG)</th><td>picture/source image</td><td>picture/source image</td><td>picture/source image</td><td>picture/source image</td><td>picture/source image</td>
 </tr>
 <tr>
-	<td>Firefox 19</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Firefox 19</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>IE 6</td><td>no image</td><td>no image</td><td>no image</td><td>no image</td><td>fallback image</td>
+	<th>IE 6</th><td>no image</td><td>no image</td><td>no image</td><td>no image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>IE 7</td><td>no image</td><td>no image</td><td>no image</td><td>no image</td><td>fallback image</td>
+	<th>IE 7</th><td>no image</td><td>no image</td><td>no image</td><td>no image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>IE 8</td><td>fallback image</td><td>no image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>IE 8</th><td>fallback image</td><td>no image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>IE 9</td><td>fallback image</td><td>fallback image (cropped and scrollable)</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>IE 9</th><td>fallback image</td><td>fallback image (cropped and scrollable)</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>IE 10</td><td>fallback image</td><td>fallback image (cropped and scrollable)</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>IE 10</th><td>fallback image</td><td>fallback image (cropped and scrollable)</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Opera 12.1</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Opera 12.1</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Opera Mobile 12.1</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Opera Mobile 12.1</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Safari 6</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Safari 6</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Safari iOS 6 (iPad)</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Safari iOS 6 (iPad)</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 <tr>
-	<td>Safari iOS 6 (iPhone)</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
+	<th>Safari iOS 6 (iPhone)</th><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td><td>fallback image</td>
 </tr>
 </table>
 
