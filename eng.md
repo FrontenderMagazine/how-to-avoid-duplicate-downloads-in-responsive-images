@@ -1,6 +1,6 @@
 # How To Avoid Duplicate Downloads In Responsive Images
 
-The `<picture>` element is a new addition to HTML5 that’s being championed by the W3C’s [Responsive Images Community Group][] (RICG). It is intended to provide a declarative, markup-based solution to enable responsive images without the need of JavaScript libraries or complicated server-side detection.
+The `<picture>` element is a new addition to HTML5 that’s being championed by the W3C’s [Responsive Images Community Group][1] (RICG). It is intended to provide a declarative, markup-based solution to enable responsive images without the need of JavaScript libraries or complicated server-side detection.
 
 The `<picture>` element supports a number of different types of fallback content, **but the current implementation of these fallbacks is problematic**. In this article, we’ll explore how the fallbacks work, how they fail and what can be done about it.
 
@@ -53,13 +53,13 @@ The `<picture>` element also has the ability to use non-image fallbacks, which s
 
 ## The Fallback Problem
 
-Right now, the `<picture>` element is not supported in any shipped browsers. Developers who want to use `<picture>` can use [Scott Jehl][]’s [Picturefill][] polyfill. Also, [Yoav Weiss][] has created a Chromium-based prototype [reference implementation][] that has partial support for `<picture>`. This Chromium build not only shows that browser support for `<picture>` is technically possible, but also enables us to check functionality and behavior against our expectations.
+Right now, the `<picture>` element is not supported in any shipped browsers. Developers who want to use `<picture>` can use [Scott Jehl][2]’s [Picturefill][3] polyfill. Also, [Yoav Weiss][4] has created a Chromium-based prototype [reference implementation][5] that has partial support for `<picture>`. This Chromium build not only shows that browser support for `<picture>` is technically possible, but also enables us to check functionality and behavior against our expectations.
 
 When testing examples like the above in his Chromium build, Yoav spotted a problem: even though `<picture>` is supported, and even though one of the first two `<source>` elements was being loaded, the fallback `<img>` was *also* loaded. **Two images were being downloaded, even though only one was being used**.
 
 ![][]
 
-[Larger view][].
+[Larger view][6].
 
 This happens because browsers “look ahead” as HTML is being downloaded and immediately start downloading images. As Yoav explains:
 
@@ -91,7 +91,7 @@ In all of these cases, we would have multiple images being downloaded instead of
 
 This problem needs both short- and long-term solutions.
 
-In the long term, we need to make sure that browser implementations of `<picture>` (and `<video>` and `<audio>`) can overcome this bug. For example, [Robin Berjon][] has suggested that it might be possible to treat the contents of `<picture>` as inert, like the contents of `<template>`, and to use the Shadow DOM (see, for example, “[HTML5’s New Template Tag: Standardizing Client-Side Templating][]”). Yoav has suggested using an attribute on `<img>` to indicate that the browser should wait to download the `src`.
+In the long term, we need to make sure that browser implementations of `<picture>` (and `<video>` and `<audio>`) can overcome this bug. For example, [Robin Berjon][7] has suggested that it might be possible to treat the contents of `<picture>` as inert, like the contents of `<template>`, and to use the Shadow DOM (see, for example, “[HTML5’s New Template Tag: Standardizing Client-Side Templating][8]”). Yoav has suggested using an attribute on `<img>` to indicate that the browser should wait to download the `src`.
 
 While changing the way the parser works is technically possible, it would make the implementation more complicated. Changing the parser could also affect JavaScript code and libraries that assume a download has been triggered as soon as a `src` attribute is added to an `<img>`. These long-term changes would require cooperation from browser vendors, JavaScript library creators and developers.
 
@@ -99,7 +99,7 @@ In the short term, we need a working solution that avoids wasted bandwidth when 
 
 So, what is currently available to us that solves this in the short term? Our old friends `<object>` and `<embed>`, both of which can be used to display images. If you load an image using these tags, it will **display properly in the appropriate fallback conditions, but it won’t otherwise be downloaded**.
 
-Different browsers behave differently according to whether we use `<object>`, `<embed>` or both. To find the best solution, I tested (using a slightly modified version of [this gist][]) in:
+Different browsers behave differently according to whether we use `<object>`, `<embed>` or both. To find the best solution, I tested (using a slightly modified version of [this gist][9]) in:
 
 * Android browser 528.5+/4.0/525.20.1 on Android 1.6 (using a virtualized Sony Xperia X10 on BrowserStack)
 
@@ -202,25 +202,175 @@ I ran five tests:
 </tr>
 </table>
 
-<center>HTTP requests</center>
+<table>
+<caption>HTTP requests</caption>
+<tr>
+	<th></th><th>Test 1</th><th>Test 2</th><th>Test 3</th><th>Test 4</th><th>Test 5</th>
+</tr>
+<tr>
+	<th>Android 1.6</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Android 2.3</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Android 4.2</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Chrome 25</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Chromium 25 (RICG)</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>2 GETs</td>
+</tr>
+<tr>
+	<th>Firefox 19</th><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>IE 6</th><td>1 GET</td><td>none</td><td>1 GET</td><td>1 GET</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>IE 7</th><td>1 GET</td><td>none</td><td>1 GET</td><td>1 GET</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>IE 8</th><td>1 GET</td><td>none</td><td>1 GET</td><td>1 GET</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>IE 9</th><td>1 HEAD, 1 GET</td><td>1 GET</td><td>1 HEAD, 1 GET</td><td>1 HEAD, 2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>IE 10</th><td>1 HEAD, 1 GET</td><td>1 GET</td><td>1 HEAD, 1 GET</td><td>1 HEAD, 2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Opera 12.1</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Opera Mobile 12.1</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Safari 6</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPad)</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPhone)</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GETs</td><td>1 GET</td>
+</tr>
+</table>
 
-TABLE
-
-<center>Image-aware context menu</center>
-
-TABLE
+<table>
+<caption>Image-aware context menu</caption>
+<tr>
+	<th></th><th>Test 1</th><th>Test 2</th><th>Test 3</th><th>Test 4</th><th>Test 5</th>
+</tr>
+<tr>
+	<th>Android 1.6</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>Android 2.3</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>Android 4.2</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>Chrome 25</th><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td>
+</tr>
+<tr>
+	<th>Chromium 25 (RICG)</th><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td>
+</tr>
+<tr>
+	<th>Firefox 19</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>IE 6</th><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td>
+</tr>
+<tr>
+	<th>IE 7</th><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td>
+</tr>
+<tr>
+	<th>IE 8</th><td>yes</td><td>no</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>IE 9</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>IE 10</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>Opera 12.1</th><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>Opera Mobile 12.1</th><td>yes</td><td>no</td><td>yes</td><td>yes</td><td>yes</td>
+</tr>
+<tr>
+	<th>Safari 6</th><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPad)</th><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPhone)</th><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td>
+</tr>
+</table>
 
 ## Making Sure The Content Is Accessible
 
-Although the specifics of how to provide fallback content for `<picture>` are [still being debated][] (see also [this thread][]), I wanted to test how Apple’s VoiceOver performed with different elements. For these experiments, I checked whether VoiceOver read `alt` attributes in various places, as well as fallback `<span>` elements. Unfortunately, I wasn’t able to test using other screen readers or assistive technology, although I’d love to hear about your experiences.
+Although the specifics of how to provide fallback content for `<picture>` are [still being debated][10] (see also [this thread][11]), I wanted to test how Apple’s VoiceOver performed with different elements. For these experiments, I checked whether VoiceOver read `alt` attributes in various places, as well as fallback `<span>` elements. Unfortunately, I wasn’t able to test using other screen readers or assistive technology, although I’d love to hear about your experiences.
 
-<center>Read by VoiceOver</center>
+<table>
+<caption>Read by VoiceOver</caption>
+<tr>
+	<th></th><th>`alt` on `picture`</th><th>`alt` on `source` (`picture → source`)</th><th>`alt` on `object` (`picture → object`)</th><th>`alt` on `embed` (`picture → embed`)</th><th>`alt` on `embed` (`picture → object → embed`)</th>
+</tr>
+<tr>
+	<th>Chrome 25</th><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Chromium 25 (RICG)</th><td>yes</td><td>no</td><td>no</td><td>no</td><td>no</td>
+</tr>
+<tr>
+	<th>Firefox 19</th><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Opera 12.1</th><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td>
+</tr>
+<tr>
+	<th>Safari 6</th><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPad)</th><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPhone)</th><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+</table>
 
-TABLE
-
-<center>Read by VoiceOver</center>
-
-TABLE
+<table>
+<caption>Read by VoiceOver</caption>
+<tr>
+	<th></th><th>`alt` on `img` (`picture → object → img`)</th><th>`alt` on `img` (`picture → img`)</th><th>`span` (`picture → span`)</th><th>`span` (`picture → object → span`)</th>
+</tr>
+<tr>
+	<th>Chrome 25</th><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Chromium 25 (RICG)</th><td>no</td><td>no</td><td>no</td><td>no</td>
+</tr>
+<tr>
+	<th>Firefox 19</th><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Opera 12.1</th><td>no</td><td>no</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Safari 6</th><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPad)</th><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+<tr>
+	<th>Safari iOS 6 (iPhone)</th><td>no</td><td>yes</td><td>yes</td><td>no</td>
+</tr>
+</table>
 
 ## Bulletproof Syntax
 
@@ -254,7 +404,7 @@ Based on these data, I’ve come up with the following “bulletproof” solutio
         width: 1px;
     }
 
-Here we have a `<picture>` element, two sources to choose from for browsers that support `<picture>`, a fallback for most other browsers using `<object>` and a `<span>` (see note just below), and a separate `<img>` fallback for IE 7 and below. The empty `alt` prevents the actual image from being announced to screen readers, and the `<span>` is hidden using CSS (which is equivalent to [HTML5 Boilerplate][]’s `.visuallyhidden` class) but still available to screen readers. The `<embed>` element is not needed.
+Here we have a `<picture>` element, two sources to choose from for browsers that support `<picture>`, a fallback for most other browsers using `<object>` and a `<span>` (see note just below), and a separate `<img>` fallback for IE 7 and below. The empty `alt` prevents the actual image from being announced to screen readers, and the `<span>` is hidden using CSS (which is equivalent to [HTML5 Boilerplate][12]’s `.visuallyhidden` class) but still available to screen readers. The `<embed>` element is not needed.
 
 (**Note:** The use of the `<span>` as a fake `alt` is necessary so that VoiceOver reads the text in Opera. Even though Opera has a relatively small footprint, and even though it’s in the process of being switched to WebKit, I still think it’s worth our consideration. However, if you don’t care about supporting that particular browser, you could get rid of the `<span>` and use an `alt` on the `<object>` instead (even though that isn’t strictly allowed by the specification). This is assuming that the `<span>` and `alt` have the same content. If you have a richer fallback element, such as a `<table>`, using both it *and* a non-empty `alt` attribute might be desirable.)
 
@@ -272,7 +422,7 @@ A similar solution should also work with `<audio>`, although `<img>` fallbacks f
 
 However, if your `<video>` needs a separate fallback and poster image, then you might want to consider using the same structure as the `<picture>` solution above.
 
-Note that `<video>` and `<audio>` don’t have `alt` attributes, and even if you add them, they will be ignored by VoiceOver. For accessible video, you might want to look into the work being done with [Web Video Text Tracks][] (WebVTT).
+Note that `<video>` and `<audio>` don’t have `alt` attributes, and even if you add them, they will be ignored by VoiceOver. For accessible video, you might want to look into the work being done with [Web Video Text Tracks][13] (WebVTT).
 
 Unfortunately, extensive testing with <video> and <audio> elements is beyond the scope of this article, so let us know in the comments if you find anything interesting with these.
 
@@ -300,9 +450,9 @@ All that being said, as a short-term solution, it’s not too bad. **We get thes
 
 ![][]
 
-[Larger view][].
+[Larger view][14].
 
-The semantics of the solution, while not ideal, are not horrible either: the [HTML5 specification][] states that an `<object>` “element can represent an external resource, which, depending on the type of the resource, will either be treated as an **image**, as a nested browsing context, or as an external resource to be processed by a plugin” (emphasis mine).
+The semantics of the solution, while not ideal, are not horrible either: the [HTML5 specification][15] states that an `<object>` “element can represent an external resource, which, depending on the type of the resource, will either be treated as an **image**, as a nested browsing context, or as an external resource to be processed by a plugin” (emphasis mine).
 
 And although the `<span>` is not as nice as a real alt attribute, using a visually hidden element for accessibility is not uncommon. Consider, for example, “Skip to content” links that are visibly hidden but available to screen readers.
 
@@ -310,18 +460,45 @@ And although the `<span>` is not as nice as a real alt attribute, using a visual
 
 The best part about this solution, though, is that it highlights how bad the current situation is. This is a real problem, and it deserves a better solution than the monstrosity I’ve proposed.
 
-We need discussion and participation from both developers and browser vendors on this. Getting support from browser makers is crucial; a specification can be written for any old thing, but it doesn’t become real until it is implemented in browsers. **Support from developers is needed** to make sure that the solution is good enough to get used in the real world. This consensus-based approach is what was used to add the `<main>` element to the specification recently; Steve Faulkner discusses this process a bit in his excellent [interview with HTML5 Doctor][].
+We need discussion and participation from both developers and browser vendors on this. Getting support from browser makers is crucial; a specification can be written for any old thing, but it doesn’t become real until it is implemented in browsers. **Support from developers is needed** to make sure that the solution is good enough to get used in the real world. This consensus-based approach is what was used to add the `<main>` element to the specification recently; Steve Faulkner discusses this process a bit in his excellent [interview with HTML5 Doctor][16].
 
 If you’re interested in helping to solve this problem, please consider joining the discussion:
 
-* [Join the RICG][], and participate in the [#respimg IRC channel][] and the [public-respimg mailing list][].
+* [Join the RICG][17], and participate in the [#respimg IRC channel][18] and the [public-respimg mailing list][19].
 
-* Check out the [RICG on GitHub][], and consider adding your voice to the [discussion on this issue][].
+* Check out the [RICG on GitHub][20], and consider adding your voice to the [discussion on this issue][21].
 
-* Join the [W3C public-html mailing list][] and [the WHATWG mailing list][] to follow and contribute to discussions about the specifications.
+* Join the [W3C public-html mailing list][22] and [the WHATWG mailing list][23] to follow and contribute to discussions about the specifications.
 
-* Help fix problems with current implementations by reviewing, patching, commenting on and filing bugs for [WebKit][], [Mozilla][] and [Internet Explorer][].
+* Help fix problems with current implementations by reviewing, patching, commenting on and filing bugs for [WebKit][24], [Mozilla][25] and [Internet Explorer][26].
 
 The next step towards a long-term solution is to achieve consensus among developers and browser vendors on how this should work. Don’t get left out of the conversation.
 
 *Thanks to fellow RICG members Yoav Weiss, Marcos Cáceres and Mat Marquis for providing feedback on this article.*
+
+[1]: http://responsiveimages.org/
+[2]: http://scottjehl.com/
+[3]: https://github.com/scottjehl/picturefill
+[4]: http://blog.yoav.ws/
+[5]: https://github.com/yoavweiss/webkit/downloads
+[6]: http://media.smashingmagazine.com/wp-content/uploads/2013/05/networkpane1.png
+[7]: http://berjon.com/
+[8]: http://www.html5rocks.com/en/tutorials/webcomponents/template/
+[9]: https://gist.github.com/nwtn/4062299
+[10]: https://github.com/ResponsiveImagesCG/picture-element/pull/23
+[11]: https://github.com/ResponsiveImagesCG/picture-element/issues/6
+[12]: http://html5boilerplate.com/
+[13]: http://dev.w3.org/html5/webvtt/
+[14]: http://media.smashingmagazine.com/wp-content/uploads/2013/05/networkpane2.png
+[15]: http://www.w3.org/TR/html5/embedded-content-0.html#the-object-element
+[16]: http://html5doctor.com/interview-steve-faulkner-html5-editor-new-doctor/
+[17]: http://www.w3.org/community/respimg/
+[18]: irc://irc.w3.org:6665/#respimg
+[19]: http://lists.w3.org/Archives/Public/public-respimg/
+[20]: https://github.com/responsiveimagescg
+[21]: https://github.com/ResponsiveImagesCG/picture-element/issues/5#issuecomment-15807311
+[22]: http://lists.w3.org/Archives/Public/public-html/
+[23]: http://lists.whatwg.org/listinfo.cgi/whatwg-whatwg.org
+[24]: https://bugs.webkit.org/
+[25]: https://bugzilla.mozilla.org/
+[26]: https://connect.microsoft.com/IE/
