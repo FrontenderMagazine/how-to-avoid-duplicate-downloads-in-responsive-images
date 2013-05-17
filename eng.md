@@ -147,7 +147,7 @@ I ran five tests:
 
 **I found the following support:**
 
-<span align="middle">What the user sees</span>
+<p style="text-align: center;">What the user sees</p>
 
 <table>
 <tr>
