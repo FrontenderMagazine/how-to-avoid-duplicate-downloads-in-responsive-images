@@ -147,9 +147,8 @@ I ran five tests:
 
 **I found the following support:**
 
-<p style="text-align: center;">What the user sees</p>
-
 <table>
+<thead>What the user sees</thead>
 <tr>
 	<td></td><td>Test 1</td><td>Test 2</td><td>Test 3</td><td>Test 4</td><td>Test 5</td>
 </tr>
