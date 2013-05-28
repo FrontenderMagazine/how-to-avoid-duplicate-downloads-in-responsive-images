@@ -410,18 +410,18 @@ iPad 2).
             <th></th>
             <th><code>alt</code> для <code>picture</code></th>
             <th><code>alt</code> для <code>source</code><br>
-                picture → <br>
-                source</th>
+                <code>picture →</code><br>
+                <code>source</code></th>
             <th><code>alt</code> для <code>object</code><br>
-                picture → <br>
-                object</th>
+                <code>picture →</code><br>
+                <code>object</code></th>
             <th><code>alt</code> для <code>embed</code><br>
-                picture →<br>
-                embed</th>
+                <code>picture →</code><br>
+                <code>embed</code></th>
             <th><code>alt</code> для <code>embed</code><br>
-                picture →<br>
-                object →<br>
-                embed</th>
+                <code>picture →</code><br>
+                <code>object →</code><br>
+                <code>embed</code></th>
         </tr>
     </thead>
     <tbody>
@@ -453,7 +453,21 @@ iPad 2).
 <table class="test-table">
     <thead>
         <tr>
-            <th></th><th>`alt` для `img` (`picture → object → img`)</th><th>`alt` для `img` (`picture → img`)</th><th>`span` (`picture → span`)</th><th>`span` (`picture → object → span`)</th>
+            <th></th>
+            <th><code>alt</code> для <code>img</code>
+                <code>picture</code> →
+                <code>object</code> →
+                <code>img</code></th>
+            <th><code>alt</code> для <code>img</code>
+                <code>picture</code> →
+                <code>img</code></th>
+            <th><code>span</code>
+                <code>picture</code> →
+                <code>span</code></th>
+            <th><code>span</code>
+                <code>picture</code> →
+                <code>object</code> →
+                <code>span</code></th>
         </tr>
     </thead>
     <tbody>
