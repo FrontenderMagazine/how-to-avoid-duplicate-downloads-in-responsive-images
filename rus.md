@@ -403,60 +403,68 @@ iPad 2).
 скринридеров и вспомогательных технологий, буду рад если вы поделитесь своим
 опытом.
 
-<table>
-<caption>Может быть прочитано VoiceOver:</caption>
-<tr>
-    <th></th><th>`alt` для `picture`</th><th>`alt` для `source` (`picture → source`)</th><th>`alt` для `object` (`picture → object`)</th><th>`alt` для `embed` (`picture → embed`)</th><th>`alt` для `embed` (`picture → object → embed`)</th>
-</tr>
-<tr>
-    <th>Chrome 25</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Chromium 25 (RICG)</th><td>да</td><td>нет</td><td>нет</td><td>нет</td><td>нет</td>
-</tr>
-<tr>
-    <th>Firefox 19</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Opera 12.1</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td><td>нет</td>
-</tr>
-<tr>
-    <th>Safari 6</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Safari iOS 6 (iPad)</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Safari iOS 6 (iPhone)</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
+### Может быть прочитано VoiceOver:
+<table class="test-table">
+    <thead>
+        <tr>
+            <th></th><th>`alt` для `picture`</th><th>`alt` для `source` (`picture → source`)</th><th>`alt` для `object` (`picture → object`)</th><th>`alt` для `embed` (`picture → embed`)</th><th>`alt` для `embed` (`picture → object → embed`)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Chrome 25</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Chromium 25 (RICG)</th><td>да</td><td>нет</td><td>нет</td><td>нет</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Firefox 19</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Opera 12.1</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Safari 6</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Safari iOS 6 (iPad)</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Safari iOS 6 (iPhone)</th><td>нет</td><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+    </tbody>
 </table>
 
-<table>
-<caption>Может быть прочитано VoiceOver:</caption>
-<tr>
-    <th></th><th>`alt` для `img` (`picture → object → img`)</th><th>`alt` для `img` (`picture → img`)</th><th>`span` (`picture → span`)</th><th>`span` (`picture → object → span`)</th>
-</tr>
-<tr>
-    <th>Chrome 25</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Chromium 25 (RICG)</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td>
-</tr>
-<tr>
-    <th>Firefox 19</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Opera 12.1</th><td>нет</td><td>нет</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Safari 6</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Safari iOS 6 (iPad)</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
-<tr>
-    <th>Safari iOS 6 (iPhone)</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
-</tr>
+### Может быть прочитано VoiceOver:
+<table class="test-table">
+    <thead>
+        <tr>
+            <th></th><th>`alt` для `img` (`picture → object → img`)</th><th>`alt` для `img` (`picture → img`)</th><th>`span` (`picture → span`)</th><th>`span` (`picture → object → span`)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Chrome 25</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Chromium 25 (RICG)</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Firefox 19</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Opera 12.1</th><td>нет</td><td>нет</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Safari 6</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Safari iOS 6 (iPad)</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+        <tr>
+            <th>Safari iOS 6 (iPhone)</th><td>нет</td><td>да</td><td>да</td><td>нет</td>
+        </tr>
+    </tbody>
 </table>
 
 ## Ошибкоустойчивый синтаксис
