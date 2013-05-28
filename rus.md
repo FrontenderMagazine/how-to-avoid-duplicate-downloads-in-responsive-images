@@ -504,7 +504,8 @@ iPad 2).
         <source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type="image/jpeg" />
 
         <!-- загружается в браузерах IE 8+, браузерах других производителей, -->
-        <!-- которые не поддерживают picture, а также браузерах, которые поддерживают picture, но не могут принять ни один из элементов source -->
+        <!-- которые не поддерживают picture, а также браузерах, которые поддерживают picture, -->
+        <!-- но не могут принять ни один из элементов source -->
         <![if gte IE 8]>
         <object data="fallback.jpg" type="image/jpeg"></object>
         <span class="fake-alt">модные штаны</span>
