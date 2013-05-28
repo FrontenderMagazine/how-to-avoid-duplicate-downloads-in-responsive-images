@@ -665,6 +665,7 @@ HTML5][15] говорит что элемент `<object>` «может пред
 [4]: http://blog.yoav.ws/
 [5]: https://github.com/yoavweiss/webkit/downloads
 [6]: http://media.smashingmagazine.com/wp-content/uploads/2013/05/networkpane1.png
+[6]: img/networkpane1.png?raw=true&amp;repo=how-to-avoid-duplicate-downloads-in-responsive-images
 [7]: http://berjon.com/
 [8]: http://www.html5rocks.com/en/tutorials/webcomponents/template/
 [9]: https://gist.github.com/nwtn/4062299
@@ -672,7 +673,7 @@ HTML5][15] говорит что элемент `<object>` «может пред
 [11]: https://github.com/ResponsiveImagesCG/picture-element/issues/6
 [12]: http://html5boilerplate.com/
 [13]: http://dev.w3.org/html5/webvtt/
-[14]: http://media.smashingmagazine.com/wp-content/uploads/2013/05/networkpane2.png
+[14]: img/networkpane2.png?raw=true&amp;repo=how-to-avoid-duplicate-downloads-in-responsive-images
 [15]: http://www.w3.org/TR/html5/embedded-content-0.html#the-object-element
 [16]: http://html5doctor.com/interview-steve-faulkner-html5-editor-new-doctor/
 [17]: http://www.w3.org/community/respimg/
