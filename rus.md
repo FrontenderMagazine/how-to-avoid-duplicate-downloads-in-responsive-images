@@ -409,16 +409,16 @@ iPad 2).
         <tr>
             <th></th>
             <th><code>alt</code> для <code>picture</code></th>
-            <th><code>alt</code> для <code>source</code><br>
+            <th><code>alt</code> для <code>source</code><br><br>
                 <code>picture →</code><br>
                 <code>source</code></th>
-            <th><code>alt</code> для <code>object</code><br>
+            <th><code>alt</code> для <code>object</code><br><br>
                 <code>picture →</code><br>
                 <code>object</code></th>
-            <th><code>alt</code> для <code>embed</code><br>
+            <th><code>alt</code> для <code>embed</code><br><br>
                 <code>picture →</code><br>
                 <code>embed</code></th>
-            <th><code>alt</code> для <code>embed</code><br>
+            <th><code>alt</code> для <code>embed</code><br><br>
                 <code>picture →</code><br>
                 <code>object →</code><br>
                 <code>embed</code></th>
@@ -454,17 +454,17 @@ iPad 2).
     <thead>
         <tr>
             <th></th>
-            <th><code>alt</code> для <code>img</code><br>
+            <th><code>alt</code> для <code>img</code><br><br>
                 <code>picture</code> →<br>
                 <code>object</code> →<br>
                 <code>img</code></th>
-            <th><code>alt</code> для <code>img</code><br>
+            <th><code>alt</code> для <code>img</code><br><br>
                 <code>picture</code> →<br>
                 <code>img</code></th>
-            <th><code>span</code><br>
+            <th><code>span</code><br><br>
                 <code>picture</code> →<br>
                 <code>span</code></th>
-            <th><code>span</code><br>
+            <th><code>span</code><br><br>
                 <code>picture</code> →<br>
                 <code>object</code> →<br>
                 <code>span</code></th>
