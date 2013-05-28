@@ -407,7 +407,12 @@ iPad 2).
 <table class="test-table">
     <thead>
         <tr>
-            <th></th><th>`alt` для `picture`</th><th>`alt` для `source` (`picture → source`)</th><th>`alt` для `object` (`picture → object`)</th><th>`alt` для `embed` (`picture → embed`)</th><th>`alt` для `embed` (`picture → object → embed`)</th>
+            <th></th>
+            <th>`alt` для `picture`</th>
+            <th>`alt` для `source`<br>(`picture → source`)</th>
+            <th>`alt` для `object`<br>(`picture → object`)</th>
+            <th>`alt` для `embed`<br>(`picture → embed`)</th>
+            <th>`alt` для `embed`<br>(`picture → object → embed`)</th>
         </tr>
     </thead>
     <tbody>
