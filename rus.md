@@ -503,7 +503,8 @@ iPad 2).
         <source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type="image/jpeg" media="(min-width: 40em)" />
         <source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type="image/jpeg" />
 
-        <!-- загружается в браузерах IE 8+, браузерах других производителей, которые не поддерживают picture, а также браузерах, которые поддерживают picture, но не могут принять ни один из элементов source -->
+        <!-- загружается в браузерах IE 8+, браузерах других производителей, -->
+        <!-- которые не поддерживают picture, а также браузерах, которые поддерживают picture, но не могут принять ни один из элементов source -->
         <![if gte IE 8]>
         <object data="fallback.jpg" type="image/jpeg"></object>
         <span class="fake-alt">модные штаны</span>
@@ -557,7 +558,8 @@ VoiceOver мог прочитать текст в браузере Opera. Хот
         <source src="video.webm" type="video/webm" />
         <source src="video.ogv" type="video/ogg" />
 
-        <!-- загружается в браузерах, которые не поддерживают video, и браузерах, которые поддерживают video, но не могут принять ни один из элементов source -->
+        <!-- загружается в браузерах, которые не поддерживают video, и браузерах, -->
+        <!-- которые поддерживают video, но не могут принять ни один из элементов source -->
         <img src="fallback.jpg" alt="fancy pants" />
     </video>
 
