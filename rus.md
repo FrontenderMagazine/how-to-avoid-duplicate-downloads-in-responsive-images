@@ -403,7 +403,7 @@ iPad 2).
 скринридеров и вспомогательных технологий, буду рад, если вы поделитесь своим
 опытом.
 
-### Может быть прочитано VoiceOver:
+### Совместимо с VoiceOver:
 <table class="test-table">
     <thead>
         <tr>
@@ -449,7 +449,6 @@ iPad 2).
     </tbody>
 </table>
 
-### Может быть прочитано VoiceOver:
 <table class="test-table">
     <thead>
         <tr>
