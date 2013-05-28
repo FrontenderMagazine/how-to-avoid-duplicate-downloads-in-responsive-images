@@ -213,7 +213,7 @@ iPad 2).
 него в свою очередь `<img>`.
 5. Для `<picture>` в качестве резервного контента используется `<img>`.
 
-**Что видит пользователь:**
+### Что видит пользователь:
 
 <table class="test-table">
 <thead>
@@ -273,11 +273,15 @@ iPad 2).
 </tbody>
 </table>
 
-<table>
-<caption>HTTP-запросы</caption>
-<tr>
-    <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
-</tr>
+### HTTP-запросы:
+
+<table class="test-table">
+<thead>
+    <tr>
+        <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
+    </tr>
+</thead>
+<tbody>
 <tr>
     <th>Android 1.6</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GET</td><td>1 GET</td>
 </tr>
@@ -326,13 +330,17 @@ iPad 2).
 <tr>
     <th>Safari iOS 6 (iPhone)</th><td>1 GET</td><td>1 GET</td><td>1 GET</td><td>2 GET</td><td>1 GET</td>
 </tr>
+</tbody>
 </table>
 
-<table>
-<caption>Контекстное меню для изображения</caption>
-<tr>
-    <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
-</tr>
+### Контекстное меню для изображения
+<table class="test-table">
+<thead>
+    <tr>
+        <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
+    </tr>
+</thead>
+<tbody>
 <tr>
     <th>Android 1.6</th><td>есть</td><td>есть</td><td>есть</td><td>есть</td><td>есть</td>
 </tr>
@@ -381,6 +389,7 @@ iPad 2).
 <tr>
     <th>Safari iOS 6 (iPhone)</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td><td>есть</td>
 </tr>
+</tbody>
 </table>
 
 ## Обеспечиваем доступность контента
