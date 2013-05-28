@@ -240,7 +240,7 @@ iPad 2)
 
 **Результаты оказались следующими:**
 
-<table>
+<table class="test-table">
 <caption>Что видит пользователь</caption>
 <tr>
     <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
