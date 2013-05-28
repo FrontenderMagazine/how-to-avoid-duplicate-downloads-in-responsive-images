@@ -454,19 +454,19 @@ iPad 2).
     <thead>
         <tr>
             <th></th>
-            <th><code>alt</code> для <code>img</code>
-                <code>picture</code> →
-                <code>object</code> →
+            <th><code>alt</code> для <code>img</code><br>
+                <code>picture</code> →<br>
+                <code>object</code> →<br>
                 <code>img</code></th>
-            <th><code>alt</code> для <code>img</code>
-                <code>picture</code> →
+            <th><code>alt</code> для <code>img</code><br>
+                <code>picture</code> →<br>
                 <code>img</code></th>
-            <th><code>span</code>
-                <code>picture</code> →
+            <th><code>span</code><br>
+                <code>picture</code> →<br>
                 <code>span</code></th>
-            <th><code>span</code>
-                <code>picture</code> →
-                <code>object</code> →
+            <th><code>span</code><br>
+                <code>picture</code> →<br>
+                <code>object</code> →<br>
                 <code>span</code></th>
         </tr>
     </thead>
