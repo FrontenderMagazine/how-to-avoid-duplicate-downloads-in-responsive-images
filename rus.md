@@ -408,11 +408,20 @@ iPad 2).
     <thead>
         <tr>
             <th></th>
-            <th>`alt` для `picture`</th>
-            <th>`alt` для `source`<br>(`picture → source`)</th>
-            <th>`alt` для `object`<br>(`picture → object`)</th>
-            <th>`alt` для `embed`<br>(`picture → embed`)</th>
-            <th>`alt` для `embed`<br>(`picture → object → embed`)</th>
+            <th><code>alt</code> для <code>picture</code></th>
+            <th><code>alt</code> для <code>source</code><br>
+                picture → <br>
+                source</th>
+            <th><code>alt</code> для <code>object</code><br>
+                picture → <br>
+                object</th>
+            <th><code>alt</code> для <code>embed</code><br>
+                picture →<br>
+                embed</th>
+            <th><code>alt</code> для <code>embed</code><br>
+                picture →<br>
+                object →<br>
+                embed</th>
         </tr>
     </thead>
     <tbody>
