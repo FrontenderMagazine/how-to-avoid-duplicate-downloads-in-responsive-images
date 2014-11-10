@@ -215,7 +215,7 @@ iPad 2).
 
 **Результаты оказались следующими:**
 
-<table>
+<table class="test-table">
 <caption>Что видит пользователь</caption>
 <tr>
     <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
@@ -270,7 +270,7 @@ iPad 2).
 </tr>
 </table>
 
-<table>
+<table class="test-table">
 <caption>HTTP-запросы</caption>
 <tr>
     <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
@@ -325,7 +325,7 @@ iPad 2).
 </tr>
 </table>
 
-<table>
+<table class="test-table">
 <caption>Контекстное меню для изображения</caption>
 <tr>
     <th></th><th>Тест 1</th><th>Тест 2</th><th>Тест 3</th><th>Тест 4</th><th>Тест 5</th>
@@ -391,7 +391,7 @@ iPad 2).
 скринридеров и вспомогательных технологий, буду рад если вы поделитесь своим
 опытом.
 
-<table>
+<table class="test-table">
 <caption>Может быть прочитано VoiceOver:</caption>
 <tr>
     <th></th><th>`alt` для `picture`</th><th>`alt` для `source` (`picture → source`)</th><th>`alt` для `object` (`picture → object`)</th><th>`alt` для `embed` (`picture → embed`)</th><th>`alt` для `embed` (`picture → object → embed`)</th>
@@ -419,7 +419,7 @@ iPad 2).
 </tr>
 </table>
 
-<table>
+<table class="test-table">
 <caption>Может быть прочитано VoiceOver:</caption>
 <tr>
     <th></th><th>`alt` для `img` (`picture → object → img`)</th><th>`alt` для `img` (`picture → img`)</th><th>`span` (`picture → span`)</th><th>`span` (`picture → object → span`)</th>
